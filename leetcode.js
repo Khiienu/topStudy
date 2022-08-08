@@ -18,7 +18,7 @@
 // console.log(twoSum([3,2,4], 6))
 // console.log(twoSum([2,5,5,11], 10))
 
-
+//! Problem 2
 //! Given an integer x, return true if x is a palindrome integer. An integer is a palindrome if reads the same backwards as forward 
 //! ex; 121 is True, -121 is not true
 
@@ -35,4 +35,68 @@
 
 //? utilizing alot of Math.something // and lots of converting numbers to string string to array and back. 
 
+
+//! Problem 3 - Roman numerals to integers
+//! Constraints : 1 <= string.length <=15 
+//!               string only contains the chars ("I","V","X","L","C","D","M")
+//!               Guarenteed to have a valid number between [1, 3999]
+
+// const romanToInt = (string) => {
+    
+//     //* make an array to push seperate roman numerals in.
+//     const romanNum = {
+//     //? key | pair
+//         I:      1,
+//         V:      5,
+//         X:      10,
+//         L:      50,
+//         C:      100,
+//         D:      500,
+//         M:      1000,
+//     }
+//     let total = 0;
+//     //* need to turn string into an array. 
+//     for(let i = 0; i < string.length; i++) {
+//         //* i i+1 | i
+//         //* C M     I   V
+//         if(string[i] === "I" && string[i+1] ==="V" ){
+//             total+=4;
+//             i++
+//         }
+//         else if(string[i] === "I" && string[i+1] === "X"){
+//             total+=9;
+//             i++
+//         }
+//         else if(string[i] === "X" && string[i+1] === "L"){
+//             total+=40;
+//             i++
+//         }
+//         else if(string[i] === "X" && string[i+1] === "C"){
+//             total+=90;
+//             i++
+//         }
+//         else if(string[i] === "C" && string[i+1] === "D"){
+//             total+=400;
+//             i++
+//         }
+//         else if(string[i] === "C" && string[i+1] === "M"){
+//             total+=900;
+//             i++
+//         }
+//         else {
+//             total+=romanNum[string[i]]
+//         }
+//     }
+//     return total;
+//     //* string length can only be 1 to 15 long. 
+//     //* strings can only contain the letters/characters ("I","V","X","L","C","D","M")
+// }
+
+
+// /*
+//     I can be placed before V (5) and X (10) to make 4 and 9. 
+//     X can be placed before L (50) and C (100) to make 40 and 90. 
+//     C can be placed before D (500) and M (1000) to make 400 and 900.
+// */
+// console.log(romanToInt("M CM XC IV"))
 
