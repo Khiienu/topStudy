@@ -100,3 +100,27 @@
 // */
 // console.log(romanToInt("M CM XC IV"))
 
+//! Problem 4 : Longest Common Prefix 
+//! find the longest common prefix in the array that contains words/strings
+
+// const longestCommonPrefix = (string) => {
+//     let prefix = ""
+
+//     if(string === null || string.length === 0 ) return prefix
+
+//     for(let i = 0; i < string[0].length;i++){
+//         //* reading the first word only
+//         //* reading the characters within that first word
+//         const char = string[0][i] 
+//         //* loops through the entire word, gathering all characters in the first string/indeces
+//         for(let j = 1; j < string.length; j++){
+//             if(string[j][i] !== char ) return prefix
+//             //* Loops through all remaining words to check if char at string[0] matches up. if so move down to add new char to prefix. if not return prefix.
+//         }
+//         prefix+=char
+//     }
+//     return prefix
+// }
+// //*                              string[0] |  string[1] |   string[2]  
+// console.log(longestCommonPrefix(["flower",    "flow",     "flowht"]))
+
