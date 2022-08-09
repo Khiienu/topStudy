@@ -1,26 +1,30 @@
 const playRound = (playerSelection, computerSelection) => {
     //* this is one round. 
     let winner = 0;
+    let playerScore = 0;
+    let computerScore = 0;
     //* check if tie, show tie
-    if(playerSelection == computerSelection) {
-        winner = 2
-    }
-    //*Check if computer wins 
-    if(
-        (computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
-        (computerSelection === "PAPER" && playerSelection === "ROCK") ||
-        (computerSelection === "SCISSORS" && playerSelection === "PAPER")  
-    ){
-        winner = 0
-    }
-    else if(
-        (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
-        (playerSelection === "PAPER" && computerSelection === "ROCK") ||
-        (playerSelection === "SCISSORS" && computerSelection === "PAPER")
-    ){
-        winner = 1
-    }
-    return winner
+        if(playerSelection == computerSelection) {
+            winner = 2
+        }
+        //*Check if computer wins 
+        if(
+            (computerSelection === "ROCK" && playerSelection === "SCISSORS") ||
+            (computerSelection === "PAPER" && playerSelection === "ROCK") ||
+            (computerSelection === "SCISSORS" && playerSelection === "PAPER")  
+        ){
+            winner = 0
+            computerScore++
+        }
+        else if(
+            (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
+            (playerSelection === "PAPER" && computerSelection === "ROCK") ||
+            (playerSelection === "SCISSORS" && computerSelection === "PAPER")
+        ){
+            winner = 1
+            playerScore++
+        }
+        game(winner,playerScore,computerScore)
 } 
 
 
@@ -40,23 +44,18 @@ const getComputerChoice = () => {
 }
 
 // console.log(playRound("ROCK", getComputerChoice()))
-const game = (pSelection,cSelection) => {
-    let winner = 5;
-    let player = 0;
-    let computer = 0;
-    for(let i = 0; i < winner; i++){
-        if(playRound(pSelection,cSelection) === 0){
-            computer++
-            console.log(`this is computers score ${computer}`)
+const game = (winner,playerScore,computerScore) => {
+    
+        if(winner === 0){
+            console.log(`this is computers score in game`)
         }
-        else if(playRound(pSelection,cSelection) === 1){
-            player++
-            console.log(`this is players score ${player}`)
+        else if(winner === 1){
+            console.log(`this is players score in game`)
         }
-        else if(playRound(pSelection,cSelection) === 2){
-            return "TIED"
+        else if(winner === 2){
+            console.log("TIE")
         }
+        console.log([playerScore,computerScore])
     }
-    return [computer,player]
-}
-console.log(game("ROCK", getComputerChoice()))
+
+console.log(playRound("ROCK", getComputerChoice()))
